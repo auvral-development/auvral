@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Auvral | Precios</title>
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="author" content="Auvral">
+	<meta name="description" content="Auvral | Nuestros planes y precios">
+	<!-- Dark mode -->
+	<script>
+		const storedTheme = localStorage.getItem('theme')
+ 
+		const getPreferredTheme = () => {
+			if (storedTheme) {
+				return storedTheme
+			}
+			return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'light'
+		}
+
+		const setTheme = function (theme) {
+			if (theme === 'auto' && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+				document.documentElement.setAttribute('data-bs-theme', 'dark')
+			} else {
+				document.documentElement.setAttribute('data-bs-theme', theme)
+			}
+		}
+
+		setTheme(getPreferredTheme())
+
+		window.addEventListener('DOMContentLoaded', () => {
+		    var el = document.querySelector('.theme-icon-active');
+			if(el != 'undefined' && el != null) {
+				const showActiveTheme = theme => {
+				const activeThemeIcon = document.querySelector('.theme-icon-active use')
+				const btnToActive = document.querySelector(`[data-bs-theme-value="${theme}"]`)
+				const svgOfActiveBtn = btnToActive.querySelector('.mode-switch use').getAttribute('href')
+
+				document.querySelectorAll('[data-bs-theme-value]').forEach(element => {
+					element.classList.remove('active')
+				})
+
+				btnToActive.classList.add('active')
+				activeThemeIcon.setAttribute('href', svgOfActiveBtn)
+			}
+
+			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+				if (storedTheme !== 'light' || storedTheme !== 'dark') {
+					setTheme(getPreferredTheme())
+				}
+			})
+
+			showActiveTheme(getPreferredTheme())
+
+			document.querySelectorAll('[data-bs-theme-value]')
+				.forEach(toggle => {
+					toggle.addEventListener('click', () => {
+						const theme = toggle.getAttribute('data-bs-theme-value')
+						localStorage.setItem('theme', theme)
+						setTheme(theme)
+						showActiveTheme(theme)
+					})
+				})
+
+			}
+		})
+		
+	</script>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="assets/images/favicon.ico">
+	<!-- Google Font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+	<!-- Plugins CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/vendor/bootstrap-icons/bootstrap-icons.css">
+	<link rel="stylesheet" type="text/css" href="assets/vendor/swiper/swiper-bundle.min.css">
+	<!-- Theme CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+</head>
+<body>
+	
+<!-- Header START -->
+<header class="header-sticky header-absolute">
+	<!-- Logo Nav START -->
+	<nav class="navbar navbar-expand-xl">
+		<div class="container">
+			<!-- Logo START -->
+			<a class="navbar-brand me-0" href="index.html">
+				<img class="light-mode-item navbar-brand-item" src="assets/images/logo.svg" alt="logo">
+				<img class="dark-mode-item navbar-brand-item" src="assets/images/logo-light.svg" alt="logo">
+			</a>
+			<!-- Logo END -->
+
+			<!-- Main navbar START -->
+			<div class="navbar-collapse collapse" id="navbarCollapse">
+				<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
+
+					<!-- Nav item -->
+					<li class="nav-item"> <a class="nav-link" href="index.html#offer">¿Qué ofrecemos?</a> </li>
+					<li class="nav-item"> <a class="nav-link" href="index.html#solutions">Soluciones</a> </li>
+					<li class="nav-item"> <a class="nav-link" href="index.html#onboarding">¿Cómo funciona?</a> </li>
+					<li class="nav-item"> <a class="nav-link active" href="pricing.html">Precios</a> </li>
+					<li class="nav-item"> <a class="nav-link" href="index.html#about-us">Nosotros</a> </li>
+					<li class="nav-item"> <a class="nav-link nav-desk-css" href="#contact-us">Contáctanos</a> </li>
+				</ul>
+			</div>
+			<!-- Main navbar END -->
+
+			<!-- Buttons -->
+			<ul class="nav navbar-nav navbar-nav-scroll align-items-center dropdown-hover ms-sm-2">
+				<!-- Sign up button -->
+						<li class="nav-mob-css nav-item ms-2">
+							<a href="sign-up.html" class="btn btn-sm btn-primary-grad mb-0">Registrarse</a>
+						</li>
+						<li class="nav-item nav-mob-css"> <a class="nav-link" href="#contact-us">Contáctanos</a> </li>
+						<!-- Dark mode option START -->
+						<li class="nav-item dropdown dropdown-animation d-none">
+							<button class="btn btn-link mb-0 px-2 lh-1" type="button" aria-expanded="false" data-bs-toggle="dropdown" data-bs-display="static">
+							<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" class="bi bi-circle-half theme-icon-active fill-mode fa-fw" viewBox="0 0 16 16">
+								<path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"></path>
+								<use href="#"></use>
+							</svg>
+							</button>
+		
+							<ul class="dropdown-menu min-w-auto dropdown-menu-end" aria-labelledby="bd-theme">
+								<li class="mb-1">
+									<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light">
+										<svg width="16" height="16" fill="currentColor" class="bi bi-brightness-high-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+											<path d="M12 8a4 4 0 1 1-8 0 4 4 0 0 1 8 0zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"></path>
+											<use href="#"></use>
+										</svg>Light
+									</button>
+								</li>
+								<li class="mb-1">
+									<button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark">
+										<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-moon-stars-fill fa-fw mode-switch me-1" viewBox="0 0 16 16">
+											<path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"></path>
+											<path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"></path>
+											<use href="#"></use>
+										</svg>Dark
+									</button>
+								</li>
+							</ul>
+						</li>
+						<!-- Dark mode option END -->
+				
+				<!-- Responsive navbar toggler -->
+				<li class="nav-item">
+					<button class="navbar-toggler ms-sm-3 p-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-animation">
+							<span></span>
+							<span></span>
+							<span></span>
+						</span>
+					</button>
+				</li>	
+			</ul>
+
+		</div>
+	</nav>
+	<!-- Logo Nav END -->
+</header>
+<!-- Header END -->
+
+<!-- **************** MAIN CONTENT START **************** -->
+<main>
+
+<!-- =======================
+Hero START -->
+<div class="bg-home-auvral">
+	<section id="pricing" class="price-wrap position-relative overflow-hidden pt-xl-8">
+		<!-- Grad blur -->
+		<div class="position-absolute top-0 start-0 mt-n9 ms-n5">
+		  <img src="assets/images/elements/grad-shape/blur-decoration.svg" class="blur-7 opacity-8" alt="Grad shape" />
+		</div>
+		<div class="container position-relative z-index-2 pt-4 pb-1 pb-xl-8">
+		  <div class="row align-items-center">
+			<!-- Hero left content START -->
+			<div class="col-lg-12 mb-5 mb-lg-0 pe-md-5" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+			  <!-- Breadcrumb -->
+			  <nav class="mb-2" aria-label="breadcrumb">
+				<ol class="breadcrumb pt-0">
+				  <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+				  <li class="breadcrumb-item active" aria-current="page">Precios</li>
+				</ol>
+			  </nav>
+	  
+			  <!-- Títulos -->
+			  <h3>Planes de Verificación de Identidad</h3>
+			  <h1 class="fw-bold mb-4">
+				<span class="text-primary">Confianza</span> en cada verificación
+			  </h1>
+	  
+			  <!-- Switch -->
+			  <form class="bg-body shadow-primary border border-primary d-inline-flex align-items-center rounded-3 p-3 px-sm-4 py-sm-3" style="--bs-border-opacity: 0.20;" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out">
+				<span class="fw-semibold heading-color">Mensual</span>
+				<div class="form-check form-switch form-check-lg mx-2 mb-0">
+				  <input class="form-check-input mt-0 price-toggle" type="checkbox" id="flexSwitchCheckDefault" />
+				</div>
+				<span class="fw-semibold heading-color">Anual</span>
+				<span class="badge bg-success ms-2">Ahorra 20%</span>
+			  </form>
+			</div>
+			<!-- Hero left content END -->
+		  </div>
+		</div>
+		<!-- Pricing box START -->
+		<div class="container-fluid">
+		  <div class="max-width-1550">
+			<div class="row">
+			  <!-- Pricing item -->
+			  <div class="col-md-6 col-xl-3 mb-5 mb-xl-0" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out">
+				<div class="card shadow overflow-hidden p-1">
+				  <!-- Card header -->
+				  <div class="card-header bg-opacity-50 p-4 pb-0">
+					<!-- Icon -->
+					<div class="icon-lg bg-primary d-flex justify-content-center align-items-center text-white rounded-circle mb-3">
+					  <i class="bi bi-file-earmark-text fa-lg lh-1 text-white"></i>
+					</div>
+					<!-- Title and price -->
+					<h6 class="mb-3">Plan Básico</h6>
+					<p class="mb-0">
+					  <span class="h2 mb-0 plan-price" data-monthly-price="$25" data-annual-price="$20">$25</span> /mes
+					</p>
+					<small>Validación básica para hasta 10 usuarios</small>
+					<!-- Button -->
+					<a href="#contact-us" class="btn btn-secondary-auvral effect-blur-button btn-transition w-100 mt-4">Comenzar</a>
+				  </div>
+	  
+				  <!-- Card footer -->
+				  <div class="card-footer bg-opacity-50 p-4">
+					<!-- List -->
+					<ul class="list-group list-group-borderless mb-0">
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Hasta 5 verificaciones al mes</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Verificación por documento oficial</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Compatibilidad con pasaporte y DNI</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Soporte para más de 30 países</li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+	  
+			  <!-- Pricing item -->
+			  <div class="col-md-6 col-xl-3 mb-5 mb-xl-0" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000" data-aos-easing="ease-in-out">
+				<div class="card shadow overflow-hidden p-1">
+				  <!-- Card header -->
+				  <div class="card-header bg-opacity-50 p-4 pb-0">
+					<!-- Icon -->
+					<div class="icon-lg bg-primary d-flex justify-content-center align-items-center text-white rounded-circle mb-3">
+					  <i class="bi bi-file-earmark-bar-graph fa-lg lh-1 text-white"></i>
+					</div>
+					<!-- Title and price -->
+					<h6 class="mb-3">Plan Estándar</h6>
+					<p class="mb-0">
+					  <span class="h2 mb-0 plan-price" data-monthly-price="$59" data-annual-price="$45">$59</span> /mes
+					</p>
+					<small>Validación avanzada para hasta 50 usuarios</small>
+					<!-- Button -->
+					<a href="#contact-us" class="btn btn-secondary-auvral effect-blur-button btn-transition w-100 mt-4">Comenzar</a>
+				  </div>
+	  
+				  <!-- Card footer -->
+				  <div class="card-footer bg-opacity-50 p-4">
+					<!-- List -->
+					<ul class="list-group list-group-borderless mb-0">
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Hasta 20 verificaciones al mes</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Verificación facial con biometría</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Validación contra listas de riesgo</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Soporte para más de 50 países</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Integración vía API y SDK</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Funciones personalizables</li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+	  
+			  <!-- Pricing item -->
+			  <div class="col-md-6 col-xl-3 mb-5 mb-xl-0" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000" data-aos-easing="ease-in-out">
+				<div class="card shadow p-1">
+				  <!-- Badge -->
+				  <div class="bg-primary-grad small text-white rounded position-absolute top-0 start-50 translate-middle px-3 py-1">Recomendado</div>
+	  
+				  <!-- Card header -->
+				  <div class="card-header bg-secondary-grad rounded-top p-4 pb-0">
+					<!-- Icon -->
+					<div class="icon-lg bg-primary d-flex justify-content-center align-items-center text-white rounded-circle mb-3">
+					  <i class="bi bi-building fa-lg lh-1 text-white"></i>
+					</div>
+					<!-- Title and price -->
+					<h6 class="mb-3">Plan Enterprise</h6>
+					<p class="mb-0">
+					  <span class="h2 mb-0 plan-price" data-monthly-price="$99" data-annual-price="$75">$99</span> /mes
+					</p>
+					<small>Validación masiva para grandes volúmenes</small>
+					<!-- Button -->
+					<a href="#contact-us" class="btn btn-primary-auvral w-100 mt-4">Comenzar</a>
+				  </div>
+	  
+				  <!-- Card footer -->
+				  <div class="card-footer bg-secondary-grad p-4">
+					<!-- List -->
+					<ul class="list-group list-group-borderless mb-0">
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Hasta 50 verificaciones al mes</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Verificación biométrica en tiempo real</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Validación documental automatizada</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Soporte global</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Integración multi-plataforma</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Funciones personalizables</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Soporte 24/7 dedicado</li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+	  
+			  <!-- Pricing item -->
+			  <div class="col-md-6 col-xl-3 mb-5 mb-xl-0" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000" data-aos-easing="ease-in-out">
+				<div class="card shadow overflow-hidden p-1">
+				  <!-- Card header -->
+				  <div class="card-header bg-opacity-50 position-relative overflow-hidden p-4 pb-0">
+					<!-- Blur decoration -->
+					<div class="position-absolute top-0 end-0 mt-n8 me-n5">
+					  <img src="assets/images/elements/grad-shape/blur-decoration.svg" class="blur-7 opacity-2 h-300px" alt="Grad shape" />
+					</div>
+					<!-- Icon -->
+					<div class="icon-lg bg-primary d-flex justify-content-center align-items-center text-white rounded-circle mb-3">
+					  <i class="bi bi-sliders fa-lg lh-1 text-white"></i>
+					</div>
+					<!-- Title and price -->
+					<h6 class="mb-3">Plan Personalizado</h6>
+					<h2>A medida</h2>
+					<small>Servicios de validación adaptados a tu negocio</small>
+					<!-- Button -->
+					<a href="#contact-us" class="btn btn-secondary-auvral effect-blur-button btn-transition w-100 mt-4">Solicitar precio</a>
+				  </div>
+	  
+				  <!-- Card footer -->
+				  <div class="card-footer bg-opacity-50 p-4">
+					<!-- List -->
+					<ul class="list-group list-group-borderless mb-0">
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Verificación ilimitada</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Reportes y analítica avanzada</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Gestor de cuenta dedicado</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Consultoría y soporte especializado</li>
+					  <li class="list-group-item d-flex heading-color mb-0"><i class="bi bi-check-lg text-primary me-1"></i>Funciones personalizables</li>
+					</ul>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		</div>
+		<!-- Pricing box END -->
+	</section>
+	<section id="compare" class="bg-dark position-relative overflow-hidden pt-5 pt-sm-7 rounded-bg" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+	<!-- Grad blur -->
+	<div class="position-absolute bottom-0 end-0 mb-n8">
+		<img src="assets/images/elements/grad-shape/blur-decoration-2.svg" class="opacity-2 blur-9" alt="Grad shape" />
+	</div>
+	
+	<!-- Decoration END -->
+	<div class="container">
+		<!-- Title -->
+		<h2 class="text-center mb-0">Comparar planes</h2>
+		<!-- Compare table START -->
+		<div class="table-responsive-xl mt-2 mt-md-5">
+		<table class="table table-striped table-borderless align-middle">
+			<!-- Head START -->
+			<thead class="align-middle">
+			<tr>
+				<th scope="col">
+				<p class="mb-0 fs-5 heading-color">Características</p>
+				</th>
+	
+				<th scope="col">
+				<div class="text-center p-3">
+					<p class="mb-1 heading-color fw-bold">Plan Básico</p>
+					<p class="mb-0 text-muted">$20 /mes</p>
+				</div>
+				</th>
+	
+				<th scope="col">
+				<div class="text-center p-3">
+					<p class="mb-1 heading-color fw-bold">Plan Estándar</p>
+					<p class="mb-0 text-muted">$45 /mes</p>
+					<span class="badge bg-success">Recomendado</span>
+				</div>
+				</th>
+	
+				<th scope="col">
+				<div class="text-center p-3">
+					<p class="mb-1 heading-color fw-bold">Plan Enterprise</p>
+					<p class="mb-0 text-muted">$75 /mes</p>
+				</div>
+				</th>
+			</tr>
+			</thead>
+			<!-- Head END -->
+	
+			<!-- Body START -->
+			<tbody class="border-top-0">
+			<tr>
+				<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Tipo de validación</span></th>
+				<td class="text-center">Básica (hasta 10 usuarios)</td>
+				<td class="text-center">Avanzada (hasta 50 usuarios)</td>
+				<td class="text-center">Masiva para grandes volúmenes</td>
+			</tr>
+	
+			<tr>
+				<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Cantidad de verificaciones mensuales</span></th>
+				<td class="text-center">Hasta 5</td>
+				<td class="text-center">Hasta 20</td>
+				<td class="text-center">Hasta 50</td>
+			</tr>
+	
+			<tr>
+				<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Métodos de verificación</span></th>
+				<td class="text-center">Documento oficial (pasaporte y DNI)</td>
+				<td class="text-center">Documento + biometría facial</td>
+				<td class="text-center">Biometría en tiempo real + validación documental automatizada</td>
+			</tr>
+	
+			<tr>
+				<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Cobertura geográfica</span></th>
+				<td class="text-center">+30 países</td>
+				<td class="text-center">+50 países</td>
+				<td class="text-center">Soporte global</td>
+			</tr>
+	
+			<tr>
+				<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Integraciones</span></th>
+				<td class="text-center text-danger"><i class="bi bi-x-circle fa-lg"></i></td>
+				<td class="text-center">API y SDK</td>
+				<td class="text-center">Multi-plataforma</td>
+			</tr>
+	
+			<tr>
+				<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Funciones personalizables</span></th>
+				<td class="text-center text-danger"><i class="bi bi-x-circle fa-lg"></i></td>
+				<td class="text-center text-success"><i class="bi bi-check-circle fa-lg"></i></td>
+				<td class="text-center text-success"><i class="bi bi-check-circle fa-lg"></i></td>
+			</tr>
+	
+			<tr>
+				<th scope="row"><span class="fw-normal heading-color ps-lg-4 mb-0">Soporte</span></th>
+				<td class="text-center">Estándar</td>
+				<td class="text-center">Prioritario</td>
+				<td class="text-center">24/7 dedicado</td>
+			</tr>
+			</tbody>
+			<!-- Body END -->
+		</table>
+		</div>
+		<!-- Compare table END -->
+	</div>
+	</section> 
+	<section id="faq" class="position-relative overflow-hidden z-index-2 pt-8" data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+	<div class="container">
+		<!-- Title -->
+		<div class="inner-container position-relative text-center mb-4 mb-md-5">
+		<h2 class="mb-0">¿Tienes preguntas? (FAQs)</h2>
+		</div>
+	
+		<div class="row">
+			<div class="col-lg-8 mx-auto">
+				<!-- Accordion START -->
+				<div class="accordion accordion-bg-body-light" id="accordionFaq">
+					
+					<!-- Item -->
+					<div class="accordion-item mb-4">
+						<div class="accordion-header font-base" id="heading-1">
+							<button class="accordion-button fw-semibold rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-1" aria-expanded="true" aria-controls="collapse-1">
+								¿Qué métodos de pago aceptan?
+							</button>
+						</div>
+						<!-- Body -->
+						<div id="collapse-1" class="accordion-collapse collapse show" aria-labelledby="heading-1" data-bs-parent="#accordionFaq">
+							<div class="accordion-body pt-0 pt-0">
+								Aceptamos todas las principales tarjetas de crédito, transferencias bancarias y pagos corporativos. En planes personalizados, nuestro equipo te asesora para activar tu servicio de validación de identidad de forma inmediata.
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div class="accordion-item mb-4">
+						<div class="accordion-header font-base" id="heading-2">
+							<button class="accordion-button fw-semibold rounded collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-2" aria-expanded="false" aria-controls="collapse-2">
+								¿Puedo cambiar mi plan más adelante?
+							</button>
+						</div>
+						<!-- Body -->
+						<div id="collapse-2" class="accordion-collapse collapse" aria-labelledby="heading-2" data-bs-parent="#accordionFaq">
+							<div class="accordion-body pt-0">
+								Sí, puedes actualizar o reducir tu plan en cualquier momento desde tu cuenta. Auvral se adapta al crecimiento de tu negocio para que siempre tengas la cobertura de validación que necesitas.
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div class="accordion-item mb-4">
+						<div class="accordion-header font-base" id="heading-3">
+							<button class="accordion-button fw-semibold collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-3" aria-expanded="false" aria-controls="collapse-3">
+								¿Ofrecen prueba gratuita?
+							</button>
+						</div>
+						<!-- Body -->
+						<div id="collapse-3" class="accordion-collapse collapse" aria-labelledby="heading-3" data-bs-parent="#accordionFaq">
+							<div class="accordion-body pt-0">
+								Sí, ofrecemos una demo gratuita para que pruebes nuestro servicio de validación biométrica y documental sin compromiso.
+							</div>
+						</div>
+					</div>
+
+					<!-- Item -->
+					<div class="accordion-item mb-4">
+						<div class="accordion-header font-base" id="heading-4">
+							<button class="accordion-button fw-semibold collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-4" aria-expanded="false" aria-controls="collapse-4">
+								¿Cómo funciona el soporte al cliente?
+							</button>
+						</div>
+						<!-- Body -->
+						<div id="collapse-4" class="accordion-collapse collapse" aria-labelledby="heading-4" data-bs-parent="#accordionFaq">
+							<div class="accordion-body pt-0">
+								En el plan Básico cuentas con soporte por correo electrónico. Los planes Avanzado y Corporativo incluyen soporte prioritario y un gerente de cuenta dedicado para garantizar una integración fluida y soporte continuo.
+							</div>
+						</div>
+					</div> 
+
+				</div>
+				<!-- Accordion END -->
+			</div>
+		</div>
+	</div>
+	</section>
+</div>
+<section id="contact-us" class="section-rounded">
+	<div class="container">
+	  <div class="row g-4 align-items-center">
+		<!-- Imagen SIN animación AOS -->
+		<div class="col-lg-4 pe-lg-5">
+		  <div class="position-relative">
+			<video autoplay muted loop playsinline class="rounded-4 contactVideo" data-aos="zoom-in" data-aos-delay="500">
+				<source src="assets/images/app/contact-us.mp4" type="video/mp4" />
+			  </video>
+			<img src="assets/images/app/contact-us.jpg" alt="img-contact-us" class="rounded-4 contactImg">
+		  </div>
+		  
+		</div>
+		<!-- Contenido y formulario -->
+		<div class="col-lg-8">
+		  <!-- Título con fade-up -->
+		  <h2 data-aos="fade-up" data-aos-duration="1000" data-aos-easing="ease-in-out">
+			Contacta con Auvral
+		  </h2>
+		  <!-- Formulario con fade-up y delay -->
+			<form id="googleForm" class="row form-border-bottom g-3" data-aos="fade-up" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out" novalidate>
+				<!-- Nombre -->
+				<div class="col-12">
+				  <div class="position-relative">
+					<input required type="text" class="form-control" name="entry.1000020" placeholder="Nombre y Apellidos*">
+					<span class="focus-border"></span>
+					<span class="position-absolute top-50 end-0 translate-middle-y"><i class="bi bi-emoji-smile"></i></span>
+				  </div>
+				</div>
+	  
+				<!-- Teléfono -->
+				<div class="row-contact">
+				  <div class="position-relative col-contact col-12">
+					<input required type="tel" class="form-control" name="entry.1000022" placeholder="Número de teléfono">
+					<span class="focus-border"></span>
+					<span class="position-absolute top-50 end-0 translate-middle-y"><i class="bi bi-telephone"></i></span>
+				  </div>
+	  
+				  <!-- Email -->
+				  <div class="position-relative col-contact col-12">
+					<input required type="email" class="form-control" name="entry.996194035" placeholder="Correo electrónico">
+					<span class="focus-border"></span>
+					<span class="position-absolute top-50 end-0 translate-middle-y"><i class="bi bi-envelope"></i></span>
+				  </div>
+				</div>  
+	  
+				<!-- Mensaje -->
+				<div class="col-12">
+				  <div class="position-relative">
+					<textarea class="form-control" name="entry.1000023" style="height: 100px" placeholder="Requerimiento o duda"></textarea>
+					<span class="focus-border"></span>
+					<span class="position-absolute top-0 end-0"><i class="bi bi-chat-square-dots"></i></span>
+				  </div>
+				</div>
+	  
+				<!-- Botón -->
+				<div class="col-12 mt-4">
+				  <button type="submit" class="btn btn-primary-grad mb-0">Enviar</button>
+				</div>
+			</form>
+		  <!-- Mensaje de éxito -->
+		  <p id="formMessage" class="text-success mt-3" style="display:none;">
+			<i class="bi bi-check-circle me-2"></i> Tu mensaje se ha enviado correctamente.
+		  </p>
+		</div>
+	  </div>
+	</div>
+</section>
+<!-- Script AJAX -->
+<script>
+document.getElementById("googleForm").addEventListener("submit", function(e){
+	e.preventDefault();
+
+	var form = e.target;
+	var data = new FormData(form);
+
+	fetch("https://docs.google.com/forms/d/e/1FAIpQLSfrQQMMD8NamQR9FjJdvYUKDWvEuT28JPWqmdeFe6cr5FZTQQ/formResponse", {
+		method: "POST",
+		body: data,
+		mode: "no-cors"
+	}).then(() => {
+		document.getElementById("formMessage").style.display = "block";
+		form.reset();
+	}).catch(err => {
+		alert("❌ Hubo un error al enviar el formulario.");
+		console.error(err);
+	});
+});
+</script>
+</main>
+<footer class="bg-dark position-relative py-sm-8 py-6" data-bs-theme="dark">
+	<!-- Shape decoration -->
+	<div class="position-absolute top-0 end-0 mt-n8 z-index-9 d-none d-md-block">
+		<img src="assets/images/elements/grad-shape/06.png" class="auvral-icon" alt="Shape">
+	</div>
+	<div class="container position-relative">
+		<div class="row mb-4 mb-lg-7">
+			<!-- Logo -->
+			<div class="col-lg-3 col-xl-4 mb-4 mb-lg-0">
+				<a class="me-0" href="index.html">
+					<img class="h-40px" src="assets/images/logo-light.svg" alt="logo">
+				</a>
+			</div>
+
+			<!-- CTA -->
+			<div class="col-lg-9 col-xl-7 ms-md-auto">
+				<div class="bg-white d-md-flex justify-content-between align-items-center rounded-4 p-4" style="--bs-bg-opacity:0.05">
+					<h5 class="mb-3 mb-md-0"><i class="bi bi-check-circle text-success me-2"></i> Confianza garantizada</h5>
+					<a href="#contact-us" class="btn btn-sm btn-primary-grad text-nowrap mb-0">Comienza ahora</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Link widgets -->
+		<div class="row g-4">
+			<!-- Widget item -->
+			<div class="col-sm-6 col-md-3">
+				<h6 class="mb-0">Empresa</h6>
+				<hr class="opacity-1 my-md-4">
+				<ul class="nav flex-column gap-1">
+					<li class="nav-item"><a class="nav-link pt-0" href="index.html#offer">¿Qué ofrecemos?</a></li>
+					<li class="nav-item"><a class="nav-link pt-0" href="index.html#about-us">Nosotros</a></li>
+					<li class="nav-item"><a class="nav-link" href="#contact-us">Contáctanos</a></li>
+				</ul>
+			</div>
+
+			<!-- Widget item -->
+			<div class="col-sm-6 col-md-3">
+				<h6 class="mb-0">Plataforma</h6>
+				<hr class="opacity-1 my-md-4">
+				<ul class="nav flex-column gap-1">
+					<li class="nav-item"><a class="nav-link" href="index.html#solutions">Soluciones</a></li>
+					<li class="nav-item"><a class="nav-link" href="index.html#onboarding">¿Cómo funciona?</a></li>
+					<li class="nav-item"><a class="nav-link" href="pricing.html">Precios</a></li>
+				</ul>
+			</div>
+			
+			<!-- Widget item -->
+			<div class="col-sm-6 col-md-3">
+				<h6 class="mb-0">Legal</h6>
+				<hr class="opacity-1 my-md-4">
+				<ul class="nav flex-column gap-1">
+					<li class="nav-item"><a class="nav-link pt-0" href="terms-conditions.html"><i class="bi bi-file-earmark-text me-2"></i>Términos y condiciones</a></li>
+					<li class="nav-item"><a class="nav-link pt-0" href="privacy-policy.html"><i class="bi bi-file-earmark-text me-2"></i>Política de privacidad</a></li>
+				</ul>
+			</div>
+
+			<!-- Widget item -->
+			<div class="col-sm-6 col-md-3">
+				<h6 class="mb-0">Síguenos</h6>
+				<hr class="opacity-1 my-md-4">
+				<ul class="list-inline mb-0">
+					<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-secondary" href="#"><i class="bi bi-facebook lh-base"></i></a> </li>
+					<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-secondary" href="#"><i class="bi bi-instagram lh-base"></i></a> </li>
+					<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-secondary" href="#"><i class="bi bi-twitter-x lh-base"></i></a> </li>
+					<li class="list-inline-item"> <a class="btn btn-xs btn-icon btn-secondary" href="#"><i class="bi bi-linkedin lh-base"></i></a> </li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</footer>
+<!-- Back to top -->
+<a href="index.html#contact-us" class="float-button pulse-float">Solicitar demo</div></a>
+<!-- Bootstrap JS -->
+<script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<!--Vendors-->
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/purecounterjs/dist/purecounter_vanilla.js"></script>
+<!-- Theme Functions -->
+<script src="assets/js/functions.js"></script>
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+	  const sections = document.querySelectorAll("section[id]");
+	  const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+	
+	  function activateMenuOnScroll() {
+		const scrollPos = window.scrollY + 100; // margen para compensar el header fijo
+	
+		sections.forEach(section => {
+		  const top = section.offsetTop;
+		  const height = section.offsetHeight;
+		  const id = section.getAttribute("id");
+	
+		  if (scrollPos >= top && scrollPos < top + height) {
+			navLinks.forEach(link => {
+			  link.classList.remove("active");
+			  if (link.getAttribute("href") === `#${id}`) {
+				link.classList.add("active");
+			  }
+			});
+		  }
+		});
+	  }
+	
+	  window.addEventListener("scroll", activateMenuOnScroll);
+	});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 700,
+    easing: 'ease-out-quart',
+    once: true,
+  });
+</script>
+<script>
+	AOS.init({
+	  once: true,
+	  duration: 1000,
+	  easing: 'ease-in-out',
+	});
+</script>
+</body>
+</html>
